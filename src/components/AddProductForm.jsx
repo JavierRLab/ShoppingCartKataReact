@@ -1,11 +1,10 @@
 import ProductList from './ProductList';
-import AddProductButton from './AddProductButton';
 
 const AddProductForm = () => {
     return (
         <form className="form__products">
             <ProductList />
-            <AddProductButton />
+            <button>Add product</button>
         </form>
     )
 }
