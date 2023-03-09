@@ -1,8 +1,8 @@
-import { getItems, getShoppingCart } from "../services/ShoppingCartAPIService";
+import { getShoppingCart } from "../services/ShoppingCartAPIService";
 
-const ShoppingCart = () => {
-    const shoppingCart = getShoppingCart();
-    let cartProducts = shoppingCart.ShoppingCartProducts
+const ShoppingCart = (props) => {
+    let cartProducts = Array.isArray(props.shoppingCart.ShoppingCartProducts) ? 
+                                        props.shoppingCart.ShoppingCartProducts : [];
     return (
         <table border="1">
             <thead>
@@ -25,11 +25,11 @@ const ShoppingCart = () => {
                 <tr>
                     <td>Total products</td>
                     <td></td>
-                    <td>{shoppingCart.TotalQuantity}</td>
+                    <td>{props.shoppingCart.TotalQuantity}</td>
                 </tr>
                 <tr>
                     <td>Total price</td>
-                    <td>{shoppingCart.TotalPrice}</td>
+                    <td>{props.shoppingCart.TotalPrice}</td>
                     <td></td>
                 </tr>
             </tfoot>

@@ -1,5 +1,5 @@
 
-export const getItems = () => {
+export const getAvailableProducts = () => {
 	return [
 		{ name: "Iceberg", price: "2.17 €" },
 		{ name: "Tomato", price: "0.73 €" }
@@ -7,6 +7,7 @@ export const getItems = () => {
 }
 
 export const getShoppingCart = () => {
+	console.log("!!!");
 	return {
 		"TotalQuantity": 3,
 		"ShoppingCartProducts": [
@@ -29,6 +30,6 @@ export const getShoppingCart = () => {
 	}
 }
 
-export const addItem = (itemName) => {
-
+export const addItem = (productName) => {
+	console.log(productName);
 }
