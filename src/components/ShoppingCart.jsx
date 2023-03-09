@@ -14,7 +14,7 @@ const ShoppingCart = () => {
             </thead>
             <tbody>
                 {cartProducts.map((cartProduct) => (
-                    <tr>
+                    <tr key={cartProduct.Product.Name}>
                         <td>{cartProduct.Product.Name}</td>
                         <td>{cartProduct.Product.FinalPrice}</td>
                         <td>{cartProduct.Quantity}</td>

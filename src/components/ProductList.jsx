@@ -6,7 +6,7 @@ const ProductList = () => {
     const items = getItems();
 
     return (
-        <select>
+        <select id="productName">
             <option>Choose product from list</option>
             {items.map((item) => (
                 <option key={item.name} value={item.name}>
