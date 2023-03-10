@@ -1,35 +1,38 @@
 
-export const getAvailableProducts = () => {
-	return [
-		{ name: "Iceberg", price: "2.17 €" },
-		{ name: "Tomato", price: "0.73 €" }
-	];
+export const getAvailableProducts = async () => {
+
+	const res = await fetch(
+		"https://localhost:7039/products"
+	)
+
+	return await res.json()
 }
 
-export const getShoppingCart = () => {
-	console.log("!!!");
-	return {
-		"TotalQuantity": 3,
-		"ShoppingCartProducts": [
-			{
-				"Product": {
-					"Name": "Iceberg",
-					"FinalPrice": 2.17
-				},
-				"Quantity": 1
-			},
-			{
-				"Product": {
-					"Name": "Tomato",
-					"FinalPrice": 0.73
-				},
-				"Quantity": 2
-			}
-		],
-		"TotalPrice": "3.63 \u20AC"
-	}
+export const getShoppingCart = async () => {
+
+
+	const res = await fetch(
+		"https://localhost:7039/shopping-cart"
+	)
+
+	return await res.json()
 }
 
-export const addItem = (productName) => {
-	console.log(productName);
+export const addItem = async (productName) => {
+	const requestOptions = {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Credentials': 'true'
+		},
+		body: JSON.stringify({ ProductName: productName })
+	};
+
+
+	const res = await fetch(
+		"https://localhost:7039/add-item",
+		requestOptions
+	)
+	console.log(res);
 }

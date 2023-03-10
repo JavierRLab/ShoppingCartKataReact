@@ -9,17 +9,19 @@ const App = () => {
   const [shoppingCart, setShoppingCart] = useState({});
 
   useEffect(() => {
-    setShoppingCart(getShoppingCart());
+    getShoppingCart()
+      .then(shoppingCart => setShoppingCart(shoppingCart))
   }, [])
 
   function handleOnAddProduct() {
-    setShoppingCart(getShoppingCart());
+    getShoppingCart()
+      .then(shoppingCart => setShoppingCart(shoppingCart))
   }
   return (
     <>
       <h1>Shopping Cart</h1>
       <AddProductForm onAddProduct={handleOnAddProduct} />
-      <ShoppingCart shoppingCart={shoppingCart}/>
+      <ShoppingCart shoppingCart={shoppingCart} />
 
     </>
   );
