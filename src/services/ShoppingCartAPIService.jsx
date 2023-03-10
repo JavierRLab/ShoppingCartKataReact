@@ -2,7 +2,7 @@
 export const getAvailableProducts = async () => {
 
 	const res = await fetch(
-		"https://localhost:7039/products"
+		"http://shoppingcartapi-env.eba-pn2hibqp.eu-central-1.elasticbeanstalk.com/products"
 	)
 
 	return await res.json()
@@ -12,7 +12,7 @@ export const getShoppingCart = async () => {
 
 
 	const res = await fetch(
-		"https://localhost:7039/shopping-cart"
+		"http://shoppingcartapi-env.eba-pn2hibqp.eu-central-1.elasticbeanstalk.com/shopping-cart"
 	)
 
 	return await res.json()
@@ -31,7 +31,7 @@ export const addItem = async (productName) => {
 
 
 	const res = await fetch(
-		"https://localhost:7039/add-item",
+		"http://shoppingcartapi-env.eba-pn2hibqp.eu-central-1.elasticbeanstalk.com/add-item",
 		requestOptions
 	)
 	console.log(res);
